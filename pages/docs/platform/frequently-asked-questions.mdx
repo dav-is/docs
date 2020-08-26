@@ -14,7 +14,7 @@ export const meta = {
   title: 'Frequently Asked Questions',
   description: 'A list of frequently asked questions relating to deployments.',
   editUrl: 'pages/docs/platform/frequently-asked-questions.mdx',
-  lastEdited: '2020-08-04T21:21:17.000Z',
+  lastEdited: '2020-08-26T07:14:20.000Z',
 }
 
 ## Platform Version Detection
@@ -40,7 +40,6 @@ The Serverless approach is an energy-efficient alternative to traditional server
 For more information on our cloud partners' Green energy policies, we recommend viewing their documentation:
 
 - [AWS Sustainability Timeline](https://aws.amazon.com/about-aws/sustainability/sustainability-timeline/)
-- [Google Cloud Sustainability](https://cloud.google.com/sustainability/)
 - [Microsoft Environmental Sustainability](https://www.microsoft.com/en-us/corporate-responsibility/sustainability)
 
 ## What can I deploy with <NameWrapper name={PRODUCT_NAME} />?
@@ -222,7 +221,7 @@ However, the [`builds`](/docs/configuration#project/builds) property will remain
 
 ## Unsupported Functions Configuration with Next.js
 
-When using Next.js, only `memory` and `maxDuration` can be used to configure functions. Next.js handles the other configuration values for you.
+When using Next.js, only `memory` and `maxDuration` can be configured within the [functions](https://vercel.com/docs/configuration#project/functions) property. Next.js automatically handles the other configuration values for you.
 
 ## Deploying Serverless Functions to Multiple Regions
 
@@ -303,11 +302,11 @@ Project names can only consist of up to 100 alphanumeric lowercase characters. H
 
 ## Repository Connection Limitation
 
-A Git Repository cannot be connected to more than 20 Projects on Vercel (not including deleted Projects) so that Pull Requests will have a reasonable number of comments and deployments.
+The amount of Vercel Projects that can be connected with the same Git repository is [limited depending on your plan](/docs/platform/limits#general-limits).
 
-If you have reached the limitation and would like to connect a new Project to the repository, you will need to disconnect an existing Project from the same repository.
+If you have reached the limitation and would like to connect a new Project to the repository, you will need to disconnect an existing Project from the same Git repository.
 
-If you would like to increase this limit, please [contact Vercel Support](/support/request).
+To increase this limit, please [contact our Sales Team](/contact/sales).
 
 ## Bypassing Password Protection Programmatically
 
@@ -329,7 +328,7 @@ These steps are required for every URL and cookie values cannot be shared across
 
 ## Domain Verification via CLI
 
-It is no longer necessary to verify your ownership of a Domain using the `vercel domains verify` command in Vercel CLI anymore.
+It is no longer necessary to verify your ownership of a Domain using the `vercel domains verify` command provided by Vercel CLI.
 
 Instead, it's now only necessary for you to point the Domain to Vercel by configuring our nameservers or a DNS Record. You can learn more about what to do exactly for your Domain by running `vercel domains inspect <domain>`, where `<domain>` is the Domain you're interested in.
 
@@ -340,3 +339,31 @@ Alternatively, if you already added it to a Project, read <Link href="/docs/v2/c
 You can't leave a team if you are the last remaining owner or the last confirmed member. In order to leave it, you first have to designate a different confirmed member to be an owner of the team.
 
 If you are the only remaining member, you should delete the team instead.
+
+## Git Default Ignore List
+
+Deployments created using Vercel CLI will automatically [ignore several files](/docs/build-step?#ignored-files-and-folders) for security and performance reasons.
+
+However, these files are _not_ ignored for deployments created using the [Git Integration](/docs/git-integrations) and a warning is printed instead. This is because `.gitignore` determines which files should be ignored.
+
+If the file was intentionally committed to Git, you can ignore the warning.
+
+If the file was accidentally committed to Git, you can remove it using the following commands:
+
+```shell
+git rm file.txt                   # remove the file
+echo 'file.txt' >> .gitignore     # append file to .gitignore
+git add .gitignore                # stage the change
+git commit -m "Removed file.txt"  # commit the change
+git push                          # deploy the change
+```
+
+## GitHub App Installation Not Found
+
+In some cases, signing up with GitHub fails due to GitHub's database inconsistencies.
+
+When you connected your Vercel account to your GitHub account, it installed the [Vercel GitHub App](https://github.com/apps/vercel) to your GitHub account and then GitHub notified Vercel that the app was successfully installed.
+
+However, Vercel was unable to retreive the app installation from GitHub, which made it appear as if the [Vercel GitHub App](https://github.com/apps/vercel) was never installed.
+
+In order to solve this issue, please wait a minute and try connecting to GitHub again. If you are still unable to connect, please contact [GitHub Support](https://support.github.com/contact) to determine why the [Vercel GitHub App](https://github.com/apps/vercel) was not able to be installed.

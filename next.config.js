@@ -187,7 +187,7 @@ module.exports = withMDX({
         destination: '/:path+',
       },
       {
-        source: '/api(|/.*)',
+        source: '/api(|/?)',
         permanent: true,
         destination: '/docs/api',
       },
@@ -199,17 +199,17 @@ module.exports = withMDX({
       {
         source: '/docs/github',
         permanent: true,
-        destination: '/docs/git-integrations/zeit-now-for-github',
+        destination: '/docs/git-integrations/vercel-for-github',
       },
       {
         source: '/docs/gitlab',
         permanent: true,
-        destination: '/docs/git-integrations/zeit-now-for-gitlab',
+        destination: '/docs/git-integrations/vercel-for-gitlab',
       },
       {
         source: '/docs/bitbucket',
         permanent: true,
-        destination: '/docs/git-integrations/zeit-now-for-bitbucket',
+        destination: '/docs/git-integrations/vercel-for-bitbucket',
       },
       {
         source: '/docs/v2/git-integration',
@@ -219,17 +219,17 @@ module.exports = withMDX({
       {
         source: '/docs/v2/more/now-for-github',
         permanent: true,
-        destination: '/docs/git-integrations/zeit-now-for-github',
+        destination: '/docs/git-integrations/vercel-for-github',
       },
       {
         source: '/docs/v2/more/now-for-gitlab',
         permanent: true,
-        destination: '/docs/git-integrations/zeit-now-for-gitlab',
+        destination: '/docs/git-integrations/vercel-for-gitlab',
       },
       {
         source: '/docs/v2/more/now-for-bitbucket',
         permanent: true,
-        destination: '/docs/git-integrations/zeit-now-for-bitbucket',
+        destination: '/docs/git-integrations/vercel-for-bitbucket',
       },
       {
         source: '/docs/:name(integrations|now-cli)/v2/:path*',
@@ -250,17 +250,17 @@ module.exports = withMDX({
       {
         source: '/docs/v2/integrations/now-for-github',
         permanent: true,
-        destination: '/docs/git-integrations/zeit-now-for-github',
+        destination: '/docs/git-integrations/vercel-for-github',
       },
       {
         source: '/docs/v2/integrations/now-for-gitlab',
         permanent: true,
-        destination: '/docs/git-integrations/zeit-now-for-gitlab',
+        destination: '/docs/git-integrations/vercel-for-gitlab',
       },
       {
         source: '/docs/v2/integrations/now-for-bitbucket',
         permanent: true,
-        destination: '/docs/git-integrations/zeit-now-for-bitbucket',
+        destination: '/docs/git-integrations/vercel-for-bitbucket',
       },
       {
         source: '/docs/aliasing',
@@ -504,9 +504,8 @@ module.exports = withMDX({
     VIDEO_ASSETS_URL: 'https://assets.vercel.com/video/upload/front',
     RAW_ASSETS_URL: 'https://assets.vercel.com/raw/upload/front',
     ASSETS: isProd ? '/docs/static' : '/static',
-    DATOCMS_KNOWLEDGE_API_ENDPOINT: 'https://graphql.datocms.com/',
-    DATOCMS_KNOWLEDGE_PREVIEW_API_ENDPOINT:
-      'https://graphql.datocms.com/preview',
+    DATOCMS_API_ENDPOINT: 'https://graphql.datocms.com/',
+    DATOCMS_PREVIEW_API_ENDPOINT: 'https://graphql.datocms.com/preview',
   },
 
   webpack(config, { isServer }) {
