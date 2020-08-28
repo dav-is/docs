@@ -586,6 +586,7 @@ export default function DeployButtonGenerator() {
               Set a default repository name for the new Git repository created
               by the user in the Deploy Flow.
             </Text>
+            <Spacer />
             <Clearable
               label="Default Project Name"
               placeholder="my-awesome-project"
@@ -670,10 +671,17 @@ export default function DeployButtonGenerator() {
         <div className={styles.settingsSection}>
           <Details title="Demo">
             <Text small>
-              The Demo Title parameter allows you to define a title of a demo
-              website, which is displayed in the Vercel Git Import Flow page.
+              To showcase a successful deployment to the user clicking a Deploy
+              Button, you can customize Deploy Flow's landing page with a{' '}
+              <b>Demo Card</b>.
             </Text>
             <Spacer />
+            <Text small>
+              The Demo Card contains a title, a description, an image and a
+              link. All of them are required for the Demo Card to show up on the
+              page.
+            </Text>
+            <HR spacing={16} />
             <Clearable
               label="Demo Title"
               placeholder="APM Story"
@@ -686,12 +694,6 @@ export default function DeployButtonGenerator() {
                 <Link href="#demo-title">the Demo Title parameter →</Link>
               </Text>
             </div>
-            <HR spacing={16} />
-            <Text small>
-              The Demo Description parameter allows you to define a description
-              of a demo website, which is displayed in the Vercel Git Import
-              Flow page.
-            </Text>
             <Spacer />
             <Clearable
               label="Demo Description"
@@ -707,11 +709,6 @@ export default function DeployButtonGenerator() {
                 </Link>
               </Text>
             </div>
-            <HR spacing={16} />
-            <Text small>
-              The Demo URL parameter allows you to define a URL of a demo
-              website, which is displayed in the Vercel Git Import Flow page.
-            </Text>
             <Spacer />
             <Clearable
               label="Demo URL"
@@ -726,12 +723,6 @@ export default function DeployButtonGenerator() {
                 <Link href="#demo-url">the Demo URL parameter →</Link>
               </Text>
             </div>
-            <HR spacing={16} />
-            <Text small>
-              The Demo Image parameter allows you to define a URL of an external
-              image of a demo website, which is displayed in the Vercel Git
-              Import Flow page.
-            </Text>
             <Spacer />
             <Clearable
               label="Demo Image"

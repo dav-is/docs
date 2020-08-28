@@ -18,7 +18,7 @@ export const meta = {
   title: 'Deploy Button',
   description: `Learn how to integrate with Vercel's flow for deploying Git repositories.`,
   editUrl: 'pages/docs/more/deploy-button.mdx',
-  lastEdited: '2020-08-19T08:38:19.000Z',
+  lastEdited: '2020-08-28T08:48:31.000Z',
   image: `https://vercel.com${process.env.ASSETS}/docs/more/deploy-button/deploy-button.png`,
 }
 
@@ -410,12 +410,20 @@ Similar to the [Project Name](#project-name) parameter, this parameter is useful
 ### Demo Title
 
 **Parameter**: `demo-title`<br />
-**Value**: Title of a Demo website.<br />
+**Value**: Title of an example deployment.<br />
 **Type**: String
 
-The Demo Title parameter allows you to define a title of a demo website, which is displayed in the Vercel Git Import Flow page.
+This parameter allows you to specify the title of an
+example successful deployment.
 
-It's part of the Demo card displayed below which shows the user how their first deployment will look like.
+The parameter is part of the Demo Card parameters. The Demo Card should
+showcase an example successful deployment to the user clicking
+on a Deploy Button and entering the Deploy Flow.
+
+<Note>
+  The Demo card is displayed only when all <InlineCode>demo-*</InlineCode>{' '}
+  parameters are provided.
+</Note>
 
 <Image
   src={`${process.env.ASSETS}/docs/more/deploy-button/new-git-external.png`}
@@ -424,15 +432,8 @@ It's part of the Demo card displayed below which shows the user how their first 
   shadow
 />
 <Caption>
-  In this example, <i>APM Story</i> represents the Demo Title.
+  An example of the Demo Card customized with the Demo Title <i>APM Story</i>.
 </Caption>
-
-The title is from a website which has already been deployed using the same Git repository provided using [Repository URL](#repository-url).
-
-<Note>
-  The Demo card is displayed only when all <InlineCode>demo-*</InlineCode>{' '}
-  parameters are provided.
-</Note>
 
 <Spacer />
 
@@ -455,12 +456,22 @@ The title is from a website which has already been deployed using the same Git r
 ### Demo Description
 
 **Parameter**: `demo-description`<br />
-**Value**: Description of a Demo website.<br />
+**Value**: Description of an example deployment.<br />
 **Type**: String
 
-The Demo Description parameter allows you to define a description of a demo website, which is displayed in the Vercel Git Import Flow page.
+This parameter allows you to specify the description of an
+example successful deployment.
 
-It's part of the Demo card displayed below which shows the user how their first deployment will look like.
+The parameter is part of the Demo Card parameters. The Demo Card should
+showcase an example successful deployment to the user clicking
+on a Deploy Button and entering the Deploy Flow.
+
+<Note>
+  The Demo card is displayed only when all <InlineCode>demo-*</InlineCode>{' '}
+  parameters are provided.
+</Note>
+
+<Spacer />
 
 <Image
   src={`${process.env.ASSETS}/docs/more/deploy-button/new-git-external.png`}
@@ -469,18 +480,8 @@ It's part of the Demo card displayed below which shows the user how their first 
   shadow
 />
 <Caption>
-  In this example, the description below <i>APM Story</i> represents the Demo
-  Description.
+  An example of the Demo Card customized with the Demo Description parameter.
 </Caption>
-
-The description should explain users what they are going to deploy.
-
-<Note>
-  The Demo card is displayed only when all <InlineCode>demo-*</InlineCode>{' '}
-  parameters are provided.
-</Note>
-
-<Spacer />
 
 <Snippet
   dark
@@ -501,12 +502,24 @@ The description should explain users what they are going to deploy.
 ### Demo URL
 
 **Parameter**: `demo-url`<br />
-**Value**: URL of a Demo website.<br />
+**Value**: URL of an example deployment.<br />
 **Type**: String
 
-The Demo URL parameter allows you to define a URL of a demo website, which is displayed in the Vercel Git Import Flow page.
+This parameter allows you to specify the URL of an
+example successful deployment.
 
-It's part of the Demo card displayed below which shows the user how their first deployment will look like.
+The parameter is part of the Demo Card parameters. The Demo Card should
+showcase an example successful deployment to the user clicking
+on a Deploy Button and entering the Deploy Flow.
+
+Clicking on the Demo Card will link the user to the URL specified by Demo URL.
+
+<Note>
+  The Demo card is displayed only when all <InlineCode>demo-*</InlineCode>{' '}
+  parameters are provided.
+</Note>
+
+<Spacer />
 
 <Image
   src={`${process.env.ASSETS}/docs/more/deploy-button/new-git-external.png`}
@@ -515,18 +528,8 @@ It's part of the Demo card displayed below which shows the user how their first 
   shadow
 />
 <Caption>
-  In this example, clicking on <i>APM Story</i> takes the user to the provided{' '}
-  <InlineCode>demo-url</InlineCode>.
+  In this example, clicking on <i>APM Story</i> takes the user to the Demo URL.
 </Caption>
-
-The URL should be of an example website deployed using the same [Repository URL](#repository-url).
-
-<Note>
-  The Demo card is displayed only when all <InlineCode>demo-*</InlineCode>{' '}
-  parameters are provided.
-</Note>
-
-<Spacer />
 
 <Snippet
   dark
@@ -547,12 +550,24 @@ The URL should be of an example website deployed using the same [Repository URL]
 ### Demo Image
 
 **Parameter**: `demo-image`<br />
-**Value**: External Image of a Demo website.<br />
+**Value**: URL of the screenshot of an example deployment.<br />
 **Type**: String
 
-The Demo Image parameter allows you to define a URL of an external image of a demo website, which is displayed in the Vercel Git Import Flow page.
+This parameter allows you to specify the URL of the
+screenshot of an example successful deployment.
 
-It's part of the Demo card displayed below which shows the user how their first deployment will look like.
+The parameter is part of the Demo Card parameters. The Demo Card should
+showcase an example successful deployment to the user clicking
+on a Deploy Button and entering the Deploy Flow.
+
+The image specified by Demo Image will be displayed on the Demo Card.
+
+<Note>
+  The Demo card is displayed only when all <InlineCode>demo-*</InlineCode>{' '}
+  parameters are provided.
+</Note>
+
+<Spacer />
 
 <Image
   src={`${process.env.ASSETS}/docs/more/deploy-button/new-git-external.png`}
@@ -561,18 +576,9 @@ It's part of the Demo card displayed below which shows the user how their first 
   shadow
 />
 <Caption>
-  In this example, a screenshot of an example website is displayed, which is
-  provided using <InlineCode>demo-image</InlineCode>.
+  An example of the Demo card customized with the screenshot of a successful{' '}
+  <i>APM Story</i> deployment.
 </Caption>
-
-In order for the image to be properly displayed in the Demo card, it needs to be provided with a width of <InlineCode>414px</InlineCode> and a height of <InlineCode>248px</InlineCode>.
-
-<Note>
-  The Demo card is displayed only when all <InlineCode>demo-*</InlineCode>{' '}
-  parameters are provided.
-</Note>
-
-<Spacer />
 
 <Snippet
   dark
