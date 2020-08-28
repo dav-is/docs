@@ -672,13 +672,13 @@ export default function DeployButtonGenerator() {
           <Details title="Demo">
             <Text small>
               To showcase a successful deployment to the user clicking a Deploy
-              Button, you can customize Deploy Flow's landing page with a{' '}
+              Button, you can customize the Deploy Flow's landing page with a{' '}
               <b>Demo Card</b>.
             </Text>
             <Spacer />
             <Text small>
-              The Demo Card contains a title, a description, an image and a
-              link. All of them are required for the Demo Card to show up on the
+              The Demo Card contains a title, a description, an image, and a
+              link. All of them are required for the Demo Card to show on the
               page.
             </Text>
             <HR spacing={16} />
