@@ -1,0 +1,35 @@
+import Standard from '~/components/layout/standard'
+import Note from '~/components/text/note'
+import { InlineCode } from '~/components/text/code'
+import EmailLink from '~/components/text/email-link'
+
+export const meta = {
+  title: 'Too Many Forks',
+  description: 'The requested path routes based on too many conditions.',
+  editUrl: 'pages/docs/error/application/TOO_MANY_FORKS.mdx',
+  lastEdited: '2021-05-06T01:59:48.000Z'
+}
+
+#### Application Error
+
+An error occurred in the application when matching too many conditional routes.
+
+<br />
+<Note label={false}>
+  <b>502</b>: Bad Gateway
+  <br />
+  Code: <InlineCode>TOO_MANY_FORKS</InlineCode>
+</Note>
+
+---
+
+#### Troubleshoot
+
+- Reduce the number of rewrites, redirects, or headers with a has key (conditional route) that match the erroring request path.
+- **<EmailLink type="support">Contact Support</EmailLink>** if you have trouble locating the conditional routes causing the error.
+
+export default ({ children }) => <Standard meta={meta}>{children}</Standard>
+
+export const config = {
+  amp: 'hybrid'
+}
